@@ -1,0 +1,38 @@
+server:
+  port: 7002
+#spring的配置
+spring:
+  application:
+    name: users-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: GMT+8
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:6001/eureka
+      #defaultZone: http://eureka1.com:6001/eureka,http://eureka2.com:6002/eureka
+
+
+#整合mybatis
+mybatis:
+  #config-location: mybatis-config.xml
+  type-aliases-package: com.cssl.bean
+  #mapper-locations: classpath:com/cssl/mapper/*.xml
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#分页设置
+pagehelper:
+  auto-dialect: true
+  page-size-zero: true
+  reasonable: true
