@@ -1,0 +1,4 @@
+server:
+  port: 3001
+config:
+  info: this is  a config-dev version=1
