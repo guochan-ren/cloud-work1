@@ -1,0 +1,4 @@
+server:
+  port: 3003
+config:
+  info: this is a config-prod version=1
